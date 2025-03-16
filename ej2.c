@@ -33,7 +33,7 @@ char preguntar2(){
     
     scanf("%s", &resp2); 
     while (resp2 != 'T' && resp2 != 'P' && resp2 != 'B' && resp2 != 't' && resp2 != 'p' && resp2 != 'b') {
-        printf("Por favor, elegí entre las 3 opciones (A, B, C)\n");
+        printf("Por favor, elegí entre las 3 opciones (T, P, B)\n");
         scanf("%s", &resp2);
     }
     
@@ -44,6 +44,10 @@ int preguntar3(){
     int resp3;
     printf("3. En km, ¿A qué distancia está el Sol (la estrella, no Diaz Real) de la Tierra? (esta pregunta no tiene opciones, se ingresa el número de la distancia).\n");
     scanf("%d", &resp3); 
+    while (resp3 < 0 ) {
+        printf("La distancia tiene que ser, minimamente, un numero mayor o igual a 0.\n");
+        scanf("%d", &resp3);
+    }
 }
 
 int correccion(char resp1, char resp2, int resp3){
